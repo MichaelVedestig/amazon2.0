@@ -2,9 +2,12 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductFeed from "../components/ProductFeed";
-import { useEffect } from "react";
+import { useState } from "react";
+
 
 export default function Home({ products }) {
+
+  
   return (
     <div className="bg-grey-100">
       <Head>

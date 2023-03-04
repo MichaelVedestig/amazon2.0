@@ -1,8 +1,20 @@
 import Image from 'next/image'
 import {MenuIcon, SearchIcon, ShoppingCartIcon} from '@heroicons/react/outline'
+import Link from "next/link";
+import { useEffect, useState } from 'react';
+
 
 
 export default function Header () {
+
+  const [greeting, setGreeting] = useState('Sing in, ');
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined')
+  //   {
+  //     let user = localStorage.getItem('user')
+  //     setGreeting(user.email);
+  //   }
+  // }, [])
   return (
     <header>
       <div className='flex items-center bg-amazon_blue p-1 flex-grow py-2'>
@@ -11,7 +23,6 @@ export default function Header () {
           src="https://links.papareact.com/f90"
           width={150}
           height={40}
-          obectFit="contain"
           className='cursor-pointer'
           />
         </div>
@@ -21,7 +32,10 @@ export default function Header () {
         </div>
         <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap '>
           <div className='link'>
+            <Link href='/account'>
+              <p className='font-extrabold md:text-sm'>{greeting}</p>
             <p className='font-extrabold md:text-sm'>account & lists</p>
+            </Link>
           </div>
           <div className='link'>
             <p className='font-extrabold md:text-sm'>Returns</p>
